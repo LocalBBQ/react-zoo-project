@@ -1,9 +1,22 @@
 {
-  "routes": [
+    "routes": [
     {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
+        "route": "/api/*",
+        "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
+        "route": "/zoo-project-react/src/components/Animal/Animal.jsx",
+        "serve": "/zoo-project-react/public/index.html",
+        "statusCode": 200
+    },
+    {
+        "route": "/zoo-project-react/src/components/Guest/Guest.jsx",
+        "serve": "/zoo-project-react/public/index.html",
+        "statusCode": 200
+    },
+    {
+        "route": "/zoo-project-react/src/components/Home/Home.jsx",
+        "serve": "/zoo-project-react/public/index.html",
+        "statusCode": 200
     }
-  ]
 }
