@@ -5,16 +5,26 @@
             "allowedRoles": ["anonymous", "authenticated"]
         },
         {
-            "route": "/zoo-project-react/src/components/Animal/",
-            "rewrite": "./index.html"
+            "route": "/static/*",
+            "headers": {
+                "cache-control": "max-age=31536000"
+            }
         },
         {
-            "route": "/zoo-project-react/src/components/Guest/",
-            "rewrite": "./index.html"
+            "route": "/static/js/*",
+            "headers": {
+                "content-type": "application/javascript"
+            }
         },
         {
-            "route": "/zoo-project-react/src/components/Home/",
-            "rewrite": "./index.html"
+            "route": "/static/css/*",
+            "headers": {
+                "content-type": "text/css"
+            }
+        },
+        {
+            "route": "/*",
+            "rewrite": "/index.html"
         }
     ]
 }
