@@ -44,7 +44,7 @@ jobs:
           action: "upload"
           app_location: "./" # Correct path to your app's source code
           api_location: "" # Leave empty if no API
-          output_location: "./zoo-project-react/build" # Path to the build output
+          output_location: "./build" # Path to the build output
           github_id_token: ${{ steps.idtoken.outputs.result }}
 
   close_pull_request_job:
