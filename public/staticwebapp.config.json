@@ -6,15 +6,15 @@
         },
         {
             "route": "/zoo-project-react/src/components/Animal/",
-            "rewrite": "/zoo-project-react/src/index.js"
+            "rewrite": "/zoo-project-react/src/App.jsx"
         },
         {
             "route": "/zoo-project-react/src/components/Guest/",
-            "rewrite": "/zoo-project-react/src/index.js"
+            "rewrite": "/zoo-project-react/src/App.jsx"
         },
         {
             "route": "/zoo-project-react/src/components/Home/",
-            "rewrite": "/zoo-project-react/src/index.js"
+            "rewrite": "/zoo-project-react/src/App.jsx"
         }
     ]
 }
