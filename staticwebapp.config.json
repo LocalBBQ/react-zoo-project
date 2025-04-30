@@ -6,17 +6,17 @@
     },
     {
         "route": "/zoo-project-react/src/components/Animal/Animal.jsx",
-        "rewrite": "/zoo-project-react/src/App.jsx",
+        "rewrite": "/zoo-project-react/src/index.js",
         "statusCode": 200
     },
     {
         "route": "/zoo-project-react/src/components/Guest/Guest.jsx",
-        "rewrite": "/zoo-project-react/src/App.jsx",
+        "rewrite": "/zoo-project-react/src/index.js",
         "statusCode": 200
     },
     {
         "route": "/zoo-project-react/src/components/Home/Home.jsx",
-        "rewrite": "/zoo-project-react/src/App.jsx",
+        "rewrite": "/zoo-project-react/src/index.js",
         "statusCode": 200
     }
     ]
