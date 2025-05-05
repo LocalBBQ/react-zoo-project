@@ -1,44 +1,55 @@
-import React from 'react';
-import './Animal.css';
+import React, { useEffect, useState } from 'react';
 
-const Animal = () => {
-  const animals = [
-    { type: 'chimpanzee', name: 'Bobo' },
-    { type: 'dingo', name: 'Maggie' },
-    { type: 'eagle', name: 'Ari' },
-    { type: 'hummingbird', name: 'Buzz' },
-    { type: 'kangaroo', name: 'Kanga' },
-    { type: 'ostrich', name: 'Stretch' },
-    { type: 'platypus', name: 'Bill' },
-    { type: 'shark', name: 'Bruce' },
-    { type: 'squirrel', name: 'Dale' },
-  ];
+const AnimalList = () => {
+  const [animals, setAnimals] = useState([]);
+  const apiUrl = 'https://dotnetbackendzooles.azurewebsites.net/api/animals'; // Replace with your API endpoint
+
+  useEffect(() => {
+    const fetchAnimals = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`Error fetching animals: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setAnimals(data);
+      } catch (error) {
+        console.error('Failed to fetch animals:', error);
+      }
+    };
+
+    fetchAnimals();
+  }, [apiUrl]);
 
   return (
-    <main>
-      <h1>Zoo Project</h1>
-      <nav>
-        <a href="/home">Home</a> | <a href="/guest">Guest</a> | <a href="/animal">Animal</a>
-      </nav>
-      <h2>Animal List</h2>
-      <table border="1">
+    <div>
+      <h1>Animal List</h1>
+      <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
-            <th>Animal Type</th>
-            <th>Animal Name</th>
+            <th>Animal ID</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Weight (kg)</th>
+            <th>Age (years)</th>
+            <th>Gender</th>
           </tr>
         </thead>
         <tbody>
-          {animals.map((animal, index) => (
-            <tr key={index}>
-              <td>{animal.type}</td>
+          {animals.map((animal) => (
+            <tr key={animal.animalId}>
+              <td>{animal.animalId}</td>
+              <td>{animal.categoryName}</td>
               <td>{animal.name}</td>
+              <td>{animal.weight}</td>
+              <td>{animal.age}</td>
+              <td>{animal.gender}</td>
             </tr>
           ))}
         </tbody>
       </table>
-    </main>
+    </div>
   );
 };
 
-export default Animal;
+export default AnimalList;
