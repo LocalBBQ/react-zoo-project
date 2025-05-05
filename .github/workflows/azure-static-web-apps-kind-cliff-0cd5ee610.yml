@@ -26,15 +26,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-      - name: Install OIDC Client from Core Package
-        run: npm install @actions/core@1.6.0 @actions/http-client
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Application
+        run: npm run build
       - name: Get Id Token
         uses: actions/github-script@v6
         id: idtoken
         with:
-          script:
-            const coredemo = require('@actions/core')
-            return await coredemo.getIDToken()
+          script: |
+            const core = require('@actions/core');
+            return await core.getIDToken();
           result-encoding: string
       - name: Build And Deploy
         id: builddeploy
@@ -42,7 +44,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_CLIFF_0CD5EE610 }}
           action: "upload"
-          app_location: "./" # Correct path to your app's source code
+          app_location: "./" # Path to your app's source code
           api_location: "" # Leave empty if no API
           output_location: "./build" # Path to the build output
           github_id_token: ${{ steps.idtoken.outputs.result }}
@@ -58,4 +60,3 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_CLIFF_0CD5EE610 }}
           action: "close"
-          app_location: "./" # Correct path to your app's source code

@@ -23,33 +23,33 @@ const AnimalList = () => {
 
   return (
     <main>
-    <div>
-      <h1>Animal List</h1>
-      <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
-        <thead>
-          <tr>
-            <th>Animal ID</th>
-            <th>Category</th>
-            <th>Name</th>
-            <th>Weight (kg)</th>
-            <th>Age (years)</th>
-            <th>Gender</th>
-          </tr>
-        </thead>
-        <tbody>
-          {animals.map((animal) => (
-            <tr key={animal.animalId}>
-              <td>{animal.animalId}</td>
-              <td>{animal.categoryName}</td>
-              <td>{animal.name}</td>
-              <td>{animal.weight}</td>
-              <td>{animal.age}</td>
-              <td>{animal.gender}</td>
+      <div>
+        <h1>Animal List</h1>
+        <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead>
+            <tr>
+              <th>Animal ID</th>
+              <th>Category</th>
+              <th>Name</th>
+              <th>Weight (kg)</th>
+              <th>Age (years)</th>
+              <th>Gender</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {animals.map((animal) => (
+              <tr key={animal.animalId}>
+                <td>{animal.animalId}</td>
+                <td>{animal.categoryName}</td>
+                <td>{animal.name}</td>
+                <td>{animal.weight}</td>
+                <td>{animal.age}</td>
+                <td>{animal.gender}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </main>
   );
 };
