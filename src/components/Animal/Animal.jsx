@@ -22,6 +22,7 @@ const AnimalList = () => {
   }, [apiUrl]);
 
   return (
+    <main>
     <div>
       <h1>Animal List</h1>
       <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -49,6 +50,7 @@ const AnimalList = () => {
         </tbody>
       </table>
     </div>
+    </main>
   );
 };
 
