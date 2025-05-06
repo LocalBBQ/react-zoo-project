@@ -37,7 +37,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_CLIFF_0CD5EE610 }}
           action: "upload"
           app_location: "./" # Path to your app's source code
-          api_location: "" # Leave empty if no API
+          #api_location: "" # Leave empty if no API
           output_location: "./build" # Path to the build output
 
   close_pull_request_job:
