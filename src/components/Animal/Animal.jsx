@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const AnimalList = () => {
   const [animals, setAnimals] = useState([]);
-  const apiUrl = 'http://localhost:5000/api/animals'; // Replace with your API endpoint
+  const apiUrl = 'https://dotnetbackendzooles.azurewebsites.net/api/animals'; // Replace with your API endpoint
 
   useEffect(() => {
     const fetchAnimals = async () => {
