@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Guest.css';
 
 const Guest = () => {
@@ -12,7 +13,7 @@ const Guest = () => {
     <main>
       <h1>Zoo Project</h1>
       <nav>
-        <a href="/home">Home</a> | <a href="/guest">Guest</a> | <a href="/animal">Animal</a>
+        <Link to="/home">Home</Link> | <Link to="/guest">Guest</Link> | <Link to="/animal">Animal</Link>
       </nav>
       <h2>Guest List</h2>
       <table border="1">

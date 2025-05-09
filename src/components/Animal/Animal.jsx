@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const AnimalList = () => {
+const Animal = () => {
   const [animals, setAnimals] = useState([]);
   const apiUrl = 'https://dotnetbackendzooles.azurewebsites.net/api/animals'; // Replace with your API endpoint
 
@@ -24,7 +25,11 @@ const AnimalList = () => {
   return (
     <main>
       <div>
-        <h1>Animal List</h1>
+        <h1>Zoo Project</h1>
+        <nav>
+          <Link to="/home">Home</Link> | <Link to="/guest">Guest</Link> | <Link to="/animal">Animal</Link>
+        </nav>
+        <h2>Animal List</h2>
         <table border="1" style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
@@ -54,4 +59,4 @@ const AnimalList = () => {
   );
 };
 
-export default AnimalList;
+export default Animal;
