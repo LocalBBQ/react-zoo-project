@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Animal = () => {
   const [animals, setAnimals] = useState([]);
   const [error, setError] = useState(null);
-  const apiUrl = 'https://dotnetbackendzooles.azurewebsites.net/api/animals';
+  const apiUrl = 'https://dotnetbackendzoo.azurewebsites.net/api/animals';
 
   useEffect(() => {
     const fetchAnimals = async () => {
@@ -16,6 +16,7 @@ const Animal = () => {
             'Content-Type': 'application/json',
           },
           mode: 'cors',
+          credentials: 'include'
         });
         
         if (!response.ok) {
